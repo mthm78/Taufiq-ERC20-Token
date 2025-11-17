@@ -1,28 +1,28 @@
-REMIX DEFAULT WORKSPACE
+Token Contracts: Simple Comparison
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+This project shows two different ways to build a basic token on the Ethereum blockchain:
 
-This workspace contains 3 directories:
+OurToken.sol: The recommended way. Uses the reliable OpenZeppelin library for a secure, standard ERC-20 token.
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+ManualToken.sol: The learning way. Builds a basic token manually to show how core features like balances work.
 
-SCRIPTS
+1. OurToken.sol (The Standard Token)
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+This is the best way to create a token because it uses code that has been tested and approved by the whole crypto community.
 
-For the deployment of any other contract, just update the contract name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+Summary
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+Standard: It is a full ERC-20 token (the common token standard).
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+Safety: It's secure because it uses the widely trusted OpenZeppelin library
+2. ManualToken.sol (The Basic, Manual Token)
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+This contract is only for learning. It shows the fundamental components of a token built completely from scratch.
+
+Summary
+
+Custom: All features (like tracking balances) are written by hand.
+
+Learning: It shows how mappings (for balances) and pure functions work in Solidity.
+
+Warning: This is NOT a complete ERC-20 token and is missing important security features.
